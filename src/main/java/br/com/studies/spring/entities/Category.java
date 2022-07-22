@@ -25,6 +25,9 @@ public class Category implements Serializable {
   @OneToMany(mappedBy = "category")
   private List<Product> produtos = new ArrayList<>();
 
+  public Category() {
+  }
+
   public Category(Long id, String name) {
     super();
 

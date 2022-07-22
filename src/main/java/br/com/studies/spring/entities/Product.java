@@ -23,6 +23,9 @@ public class Product implements Serializable {
   private Integer amount;
   private Double price;
 
+	public Product() {		
+	}
+
   public Product(Long id, String name, Integer amount, Double price, Category category) {
 		super();
 

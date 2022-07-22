@@ -19,10 +19,10 @@ public class CategoryService {
     return repository.findAll();
   }
 
-  public Optional<Category> findById(Long id){
+  public Category findById(Long id){
     Optional<Category> obj = repository.findById(id);
 
-    return obj;
+    return obj.get();
   }
 
   public Category create(Category category){
