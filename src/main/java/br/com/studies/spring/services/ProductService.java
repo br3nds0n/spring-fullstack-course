@@ -19,10 +19,10 @@ public class ProductService {
     return repository.findAll();
   }
 
-  public Optional<Product> findById(Long id){
+  public Product findById(Long id){
     Optional<Product> obj = repository.findById(id);
 
-    return obj;
+    return obj.get();
   }
 
   public Product create(Product product){
