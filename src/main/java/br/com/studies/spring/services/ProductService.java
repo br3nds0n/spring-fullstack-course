@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.studies.spring.entities.Product;
+import br.com.studies.spring.exceptions.ResourceNotFoundException;
 import br.com.studies.spring.repositories.ProductRepository;
 
 @Service
@@ -22,7 +23,7 @@ public class ProductService {
   public Product findById(Long id){
     Optional<Product> obj = repository.findById(id);
 
-    return obj.get();
+    return obj.orElseThrow(() -> new ResourceNotFoundException(id));
   }
 
   public Product create(Product product){
