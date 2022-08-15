@@ -13,32 +13,31 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "products")
 public class Product implements Serializable {
-  
-  private static final long serialVersionUID = 1L;
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  private String name;
-  private Integer amount;
-  private Double price;
+	private static final long serialVersionUID = 1L;
 
-	public Product() {		
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+	private Integer amount;
+	private Double price;
+
+	@ManyToOne
+	@JoinColumn(name = "categoryid")
+	private Category category;
+
+	public Product() {
 	}
 
-  public Product(Long id, String name, Integer amount, Double price, Category category) {
+	public Product(Long id, String name, Integer amount, Double price, Category category) {
 		super();
-
 		this.id = id;
 		this.name = name;
 		this.amount = amount;
 		this.price = price;
 		this.category = category;
 	}
-
-	@ManyToOne
-	@JoinColumn(name = "categoryid")
-	private Category category;
 
 	public Category getCategory() {
 		return category;
@@ -48,7 +47,7 @@ public class Product implements Serializable {
 		this.category = category;
 	}
 
-  public Long getId() {
+	public Long getId() {
 		return id;
 	}
 
