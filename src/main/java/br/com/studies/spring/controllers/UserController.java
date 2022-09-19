@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,11 @@ import br.com.studies.spring.services.UserService;
 @RestController
 @RequestMapping({ "/users" })
 public class UserController {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    private String senhaComHash;
 
     @Autowired
     private UserService service;
@@ -41,6 +47,9 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> create(@RequestBody User user) {
+        this.senhaComHash = passwordEncoder.encode(user.getPassword());
+        user.setPassword(this.senhaComHash);
+
         user = service.create(user);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();

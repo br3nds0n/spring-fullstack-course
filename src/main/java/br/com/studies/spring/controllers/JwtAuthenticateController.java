@@ -21,7 +21,7 @@ public class JwtAuthenticateController {
     private List<User> usuarios = new ArrayList<>();
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String crwateToken(@RequestBody User auth) {
+    public String createToken(@RequestBody User auth) {
         usuarios = repository.findAll();
 
         for (User user : usuarios) {
