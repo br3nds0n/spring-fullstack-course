@@ -8,21 +8,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
-	
-  @Value("${url.web}")
-  private String origin;
-  
-  @Bean
+
+	@Value("${url.web}")
+	private String origin;
+
+	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-				.allowedOrigins(origin)
-				.allowedMethods("*")
-				.allowedHeaders("*");
+						.allowedOrigins(origin)
+						.allowedMethods("*")
+						.allowedHeaders("*");
 			}
 		};
 	}
 }
-
