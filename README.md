@@ -1,4 +1,4 @@
-# 📦 blue schedule backend [<img align="right" src="https://img.shields.io/badge/release-v0.0.1-green">](https://github.com/br3nds0n/spring-fullstack-course/releases)
+# 📦 spring fullstack course [<img align="right" src="https://img.shields.io/badge/release-v0.0.1-green">](https://github.com/br3nds0n/spring-fullstack-course/releases)
 
 > <b>Status code:</b> 🚧 andamento 🚧
 
@@ -10,7 +10,6 @@
 -   [📥 download](#-download)
     -   [setup](#-setup)
     -   [starting](#-starting)
-        -   [docker](#-docker)
 -   [📖 swagger](#-swagger)
     -   [documentação](#-documentação)
 -   [🛠 tecnologias](#-tecnologias)
@@ -44,7 +43,7 @@ Neste projeto também está sendo utilizado o [Docker](https://www.docker.com/),
 $ git clone https://github.com/br3nds0n/spring-fullstack-course.git
 
 # acesse a pasta do projeto
-$ cd blue-schedule-backend
+$ cd spring-fullstack-course
 
 # instale as dependências
 $ ./mvnw install
