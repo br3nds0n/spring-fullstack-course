@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.com.studies.spring.entities.User;
+import br.com.studies.spring.entities.Users;
 import br.com.studies.spring.services.UserService;
 
 @RestController
@@ -32,21 +32,21 @@ public class UserController {
     private UserService service;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        List<User> list = service.findAll();
+    public ResponseEntity<List<Users>> findAll() {
+        List<Users> list = service.findAll();
 
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(path = { "/{id}" })
     public ResponseEntity<?> findById(@PathVariable Long id) {
-        User list = service.findById(id);
+        Users list = service.findById(id);
 
         return ResponseEntity.ok().body(list);
     }
 
     @PostMapping
-    public ResponseEntity<User> create(@RequestBody User user) {
+    public ResponseEntity<Users> create(@RequestBody Users user) {
         this.senhaComHash = passwordEncoder.encode(user.getPassword());
         user.setPassword(this.senhaComHash);
 
@@ -58,7 +58,7 @@ public class UserController {
     }
 
     @PutMapping(path = { "/{id}" })
-    public ResponseEntity<User> update(@RequestBody User user, @PathVariable Long id) {
+    public ResponseEntity<Users> update(@RequestBody Users user, @PathVariable Long id) {
         user = service.update(user, id);
 
         return ResponseEntity.noContent().build();
