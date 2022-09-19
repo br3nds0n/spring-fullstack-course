@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,10 +27,10 @@ public class User implements Serializable {
     @JsonInclude(Include.NON_NULL)
 	private String token;
 
-    public User() {
+    public Users() {
     }
 
-    public User(Long id, String email, String username, String password, String token) {
+    public Users(Long id, String email, String username, String password, String token) {
         this.id = id;
         this.email = email;
         this.username = username;
@@ -94,7 +94,7 @@ public class User implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		Users other = (Users) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
