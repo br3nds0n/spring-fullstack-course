@@ -107,11 +107,11 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 
 | logo                                                                                                                                                                                                                           | Framework  | Version  |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- | :------: |
-| <a href="https://www.java.com/pt-BR/" target="_blank"><img align="center" alt="java" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg"></a>                            | Java       | `17.0.0` |
-| <a href="https://start.spring.io/" target="_blank"><img align="center" alt="springboot" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original.svg"></a>                     | SpringBoot | `2.7.1`  |
-| <a href="https://pt-br.reactjs.org/" target="_blank"><img align="center" alt="maven" height="30" width="40" src="https://user-images.githubusercontent.com/82064724/168427904-8ca2ff98-2496-45bc-9747-9875009566b5.png">       | Maven      | `3.6.3`  |
-| <a href="https://www.postgresql.org/download/" target="_blank"><img align="center" alt="PostgreSQL" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg"></a> | PostgreSQL | `8.7.3`  |
-| <a href="https://www.docker.com/"><img align="center" alt="docker" height="50" width="40" src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original.svg"></a>                                          | Docker     | `1.27.4` |
+| <a href="https://www.java.com/pt-BR/" target="_blank"><img align="center" alt="java" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg"></a>                            | Java       | `v17.0.0` |
+| <a href="https://start.spring.io/" target="_blank"><img align="center" alt="springboot" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original.svg"></a>                     | SpringBoot | `v2.7.1`  |
+| <a href="https://pt-br.reactjs.org/" target="_blank"><img align="center" alt="maven" height="30" width="40" src="https://user-images.githubusercontent.com/82064724/168427904-8ca2ff98-2496-45bc-9747-9875009566b5.png">       | Maven      | `v3.8.6`  |
+| <a href="https://www.postgresql.org/download/" target="_blank"><img align="center" alt="PostgreSQL" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg"></a> | PostgreSQL | `v8.7.3`  |
+| <a href="https://www.docker.com/"><img align="center" alt="docker" height="50" width="40" src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original.svg"></a>                                          | Docker     | `v2.10.2` |
 
 <br>
                  
