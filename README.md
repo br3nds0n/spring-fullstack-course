@@ -27,8 +27,6 @@ Este projeto é o back-end do [front-end](https://github.com/br3nds0n/vue-fullst
 -   Regras de Autenticação;
 -   Documentação com Swagger;
 
-<br>
-
 ## 📥 download
 
 Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
