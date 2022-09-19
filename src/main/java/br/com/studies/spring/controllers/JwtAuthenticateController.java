@@ -2,6 +2,7 @@ package br.com.studies.spring.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.studies.spring.entities.Users;
 import br.com.studies.spring.repositories.UserRepository;
+import br.com.studies.spring.security.JwtTokenUtil;
 import br.com.studies.spring.security.JwtUserDetailsService;
 
 @RestController
@@ -27,10 +29,15 @@ public class JwtAuthenticateController {
     @Autowired
     private JwtUserDetailsService jwtUserDetailService;
 
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
     private List<Users> usuarios = new ArrayList<>();
+    private String token;
+    private Long id;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String createToken(@RequestBody Users auth) {
+    public Optional<Users> createToken(@RequestBody Users auth) {
         usuarios = repository.findAll();
 
         for (Users user : usuarios) {
@@ -39,11 +46,26 @@ public class JwtAuthenticateController {
 
                 final UserDetails userDetails = jwtUserDetailService.loadUserByUsername(auth.getUsername());
 
-                return user.getUsername() + "OK";
-            } else {
-                return "erro";
+                this.token = jwtTokenUtil.generateToken(userDetails);
+                this.token = jwtTokenUtil.generateToken(userDetails);
+                this.id = user.getId();
+                Optional<Users> obj = null;
+                obj = repository.findById(this.id);
+                obj.orElseThrow().setToken(token);
+                obj.orElseThrow().setPassword("");
+                return obj;
             }
         }
-        return null;
+        this.id = (long) 1;
+        Optional<Users> obj = null;
+        
+        obj = repository.findById(this.id);
+        obj.orElseThrow().setToken(null);
+        obj.orElseThrow().setId(null);
+        obj.orElseThrow().setEmail("Erro ao tentar logar!");
+        obj.orElseThrow().setPassword("");
+        obj.orElseThrow().setUsername("username ou password não conferem!!");
+
+        return obj;
     }
 }
