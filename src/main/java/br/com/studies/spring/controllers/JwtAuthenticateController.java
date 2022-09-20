@@ -47,7 +47,6 @@ public class JwtAuthenticateController {
                 final UserDetails userDetails = jwtUserDetailService.loadUserByUsername(auth.getUsername());
 
                 this.token = jwtTokenUtil.generateToken(userDetails);
-                this.token = jwtTokenUtil.generateToken(userDetails);
                 this.id = user.getId();
                 Optional<Users> obj = null;
                 obj = repository.findById(this.id);
